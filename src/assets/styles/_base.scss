@@ -1,0 +1,426 @@
+body {
+    background-color: #f5f6fa;
+    font-family: "Poppins", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    &.align-start {
+        align-items: flex-start;
+        padding: 40px 0;
+        section {
+            justify-content: flex-start;
+            height: inherit;
+        }
+    }
+    section {
+        padding: 70px 140px;
+        width: 1100px;
+        height: 750px;
+        background: #fff;
+        box-shadow: 0px 5px 148px rgba(182, 185, 196, 0.5);
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            .title {
+                display: flex;
+                align-items: center;
+                .icon {
+                    margin-right: 10px;
+                }
+                .content {
+                    margin-top: -5px;
+                }
+                h2 {
+                    margin-bottom: 2px;
+                }
+            }
+            .steps {
+                .steps-list {
+                    .steps-item {
+                        margin-left: 20px;
+                        display: inline-block;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                        width: 60px;
+                        &:last-child {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 18px;
+                            right: -20px;
+                            width: 22px;
+                            height: 1px;
+                            z-index: -1;
+                            background-color: $border-color;
+                        }
+                       
+                        &.active {
+                            .circle {
+                                background-color: $p-color;
+                                border-color: $p-color;
+                                color: #fff;
+                            }
+                            .text {
+                                color: $p-color;
+                                font-weight: 600;
+                            }
+                            &:after {
+                                background-color: $p-color;
+                            }
+                        }
+                     
+                        .circle {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 100%;
+                            line-height: 36px;
+                            display: inline-block;
+                            font-weight: 600;
+                            font-size: 13px;
+                            background-color: $bg-color;
+                            background-color: $border-color;
+                            svg{
+                                position: relative;
+                                top: 2px;
+                            }
+                        }
+                        .text {
+                            display: block;
+                            color: $font-t-color;
+                            font-size: 12px;
+                            margin-top: 8px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        .section-content {
+            .step-content {
+                background-color: $bg-color;
+                border: 1px solid $border-color;
+                display: block;
+                padding: 40px;
+                text-align: left;
+                border-radius: 30px;
+                &.padding{
+                    padding: 100px 40px;
+                }
+                &.align-center{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    .icon{
+                        margin-bottom: 20px;
+                    }
+                }
+
+                h3 {
+                    margin-bottom: 5px;
+                }
+                p {
+                    font-size: 14px;
+                    b {
+                        color: $font-p-color;
+                        font-weight: 400;
+                    }
+                }
+                .table {
+                    background-color: #fff;
+                    border-radius: 15px;
+                    box-shadow: 0px 4px 50px rgba(66, 82, 146, 0.08);
+                    padding: 20px;
+                    text-align: left;
+                    overflow-x: scroll;
+                    margin-top: 30px;
+                    &.border {
+                        margin-top: 0;
+                        td {
+                            >span {
+                                border-bottom: 1px solid $border-color;
+                                width: 100%;
+                                overflow: initial;
+                                white-space: initial;
+                                text-overflow: initial;
+                                padding: 10px;
+                                height: 42px;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .circle {
+                                width: 25px;
+                                height: 25px;
+                                border-radius: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 12px;
+                                color: #485281;
+                                background-color: #fbfcff;
+                                border: 1px solid #ecf0fc;
+                                font-weight: 600;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                    table {
+                        width: 100%;
+                    }
+                    th {
+                        color: $font-p-color;
+                        padding: 10px 10px;
+                        white-space: nowrap;
+                    }
+                    td {
+                        span {
+                            padding: 5px 10px;
+                            width: 90%;
+                            display: block;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    td,
+                    th {
+                        font-size: 12px;
+                    }
+                }
+
+                .box {
+                    background: #ffffff;
+                    box-shadow: 0px 4px 50px rgba(66, 82, 146, 0.08);
+                    border-radius: 10px;
+                    padding: 10px 25px;
+                    border: 1px solid transparent;
+                    margin-bottom: 20px;
+                    svg {
+                        fill: none;
+                        stroke: none;
+                        path {
+                            fill: #fff;
+                            stroke: none;
+                        }
+                    }
+
+                    .box-header {
+                        border-bottom: 1px solid $border-color;
+                        margin: -10px -25px 15px -25px;
+                        padding: 8px 25px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .box-title {
+                            font-size: 12px;
+                            color: $font-p-color;
+                            font-weight: 600;
+                            display: flex;
+                            align-items: center;
+                            b {
+                                font-weight: 500;
+                                font-size: 10px;
+                                color: #e80000;
+                                margin-left: 10px;
+                                border: 1px solid #e80000;
+                                border-radius: 5px;
+                                padding: 3px 5px;
+                            }
+                            .validate {
+                                display: inline-block;
+                                margin-right: 10px;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                display: flex;
+                                align-items: center;
+                                color: #fff;
+                                border: 1px solid transparent;
+                                justify-content: center;
+                            }
+                            i {
+                                color: #e80000;
+                                margin-left: 5px;
+                            }
+                        }
+                        .select {
+                            .select-dropdown {
+                                width: 150px;
+                                border: 1px solid $border-color;
+                                background-color: $bg-color;
+                                border-radius: 10px;
+                                position: relative;
+                                &.active {
+                                    border-radius: 10px 10px 0 0;
+                                    .select-list{
+                                        box-shadow: 0px 5px 70px rgba(182, 185, 196, 0.3);
+                                    }
+                                    svg {
+                                        transform: scale(0.9) rotate(180deg);
+                                    }
+                                }
+                            }
+                            svg,
+                            path {
+                                fill: $p-color;
+                                position: absolute;
+                                top: 15px;
+                                right: 15px;
+
+                                transform: scale(0.9) rotate(0deg);
+                            }
+
+                            .select-title {
+                                font-weight: 500;
+                                color: $font-p-color;
+                                padding: 0 15px;
+                                font-size: 12px;
+                                line-height: 38px;
+                                cursor: pointer;
+                            }
+                            .select-list {
+                                border-radius: 0 0 10px 10px;
+                                border: 1px solid $border-color;
+                                background-color: $bg-color;
+                                width: calc(100% + 2px);
+                                position: absolute;
+                                top: 100%;
+                                left: -1px;
+                                z-index: 5;
+                                li {
+                                    list-style-type: none;
+                                    font-weight: 500;
+                                    border-bottom: 1px solid $border-color;
+                                    color: $font-s-color;
+                                    padding: 0 10px;
+                                    cursor: pointer;
+                                    transition: 0.3s;
+                                    font-size: 12px;
+                                    padding: 12px 15px;
+                                    &:hover {
+                                        background-color: darken($bg-color, 1.2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .box-list-item {
+                        margin: 10px 0;
+                        color: $font-s-color;
+                        font-size: 12px;
+                        display: flex;
+                        align-items: center;
+                        span {
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 12px;
+                            color: $font-p-color;
+                            background-color: $bg-color;
+                            border: 1px solid $border-color;
+                            font-weight: 600;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    &.valid {
+                        .box-title {
+                            .validate {
+                                border-color: #00d047;
+
+                                svg,
+                                path {
+                                    color: #00d047;
+                                    fill: #00d047;
+                                }
+                            }
+                        }
+                    }
+                    &.invalid {
+                        .validate {
+                            border-color: #e80000 !important;
+
+                            svg,
+                            path {
+                                fill: #e80000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .step-actions {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 20px;
+                > * {
+                    margin-left: 10px;
+                }
+            }
+
+            .drop-zone {
+                background-color: $bg-color;
+                border: 1px solid $border-color;
+                padding: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 30px;
+                transition: 0.3s;
+                flex-direction: column;
+                text-align: center;
+                &:hover {
+                    border-color: $p-color;
+                }
+                h3 {
+                    margin: 7px 0;
+                }
+                p {
+                    font-size: 14px;
+                    b {
+                        color: $font-p-color;
+                        font-weight: 400;
+                    }
+                }
+                &.focus {
+                    border-color: $p-color;
+                }
+            }
+        }
+    }
+}
